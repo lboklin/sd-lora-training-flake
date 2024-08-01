@@ -3,16 +3,18 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/7b75a79581cfa1cfd676b5b85d6a8ed772635c13";
+    systems.url = "github:nix-systems/x86_64-linux";
     flake-utils.url = "github:numtide/flake-utils";
+    flake-utils.inputs.systems.follows = "systems";
     yaml2nix.url = "github:euank/yaml2nix";
     yaml2nix.follows = "nixpkgs";
   };
 
   outputs = {
-    self,
     nixpkgs,
     flake-utils,
     yaml2nix,
+    ...
   }:
     flake-utils.lib.eachDefaultSystem (
       system: let
