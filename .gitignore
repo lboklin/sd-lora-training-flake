@@ -1,0 +1,14 @@
+result
+out
+output
+*.bak
+# random possible dir names one might use for personal training
+train_data
+train_config
+training_data
+training_config
+data
+dataset
+images
+# catch-all typical pattern
+my-*
